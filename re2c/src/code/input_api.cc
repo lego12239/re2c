@@ -45,11 +45,11 @@ static std::string yych_conv(const opt_t *opts)
 
 void output_peek(std::ostream &o, uint32_t ind, const opt_t *opts)
 {
-	o << indent(ind, opts->indString) << opts->yych << " = " << yych_conv(opts);
+	o << indent(ind, opts->indString);
 	if (opts->input_api == INPUT_CUSTOM) {
 		o << opts->yypeek << " ()";
 	} else {
-		o << "*" << opts->yycursor;
+		o << opts->yych << " = " << yych_conv(opts) << "*" << opts->yycursor;
 	}
 	o << ";\n";
 }
