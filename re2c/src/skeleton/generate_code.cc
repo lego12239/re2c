@@ -116,7 +116,7 @@ void emit_start(OutputFile &o, size_t maxfill, size_t maxnmatch, const std::stri
 	exact_uint (o, sizeof_cunit);
 	o.ws("\n#define YYKEYTYPE ");
 	exact_uint (o, sizeof_key);
-	o.ws("\n#define YYPEEK() *cursor");
+	o.ws("\n#define YYPEEK() yych = *cursor");
 	o.ws("\n#define YYSKIP() ++cursor");
 	if (backup) {
 		o.ws("\n#define YYBACKUP() marker = cursor");
